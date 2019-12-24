@@ -18,4 +18,7 @@ RUN gem install bundler -v 1.17.3
 RUN gem list bundler
 RUN bundle install
 COPY . APP_PATH
+COPY entrypoint.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint.sh
+ENTRYPOINT ["entrypoint.sh"]
 EXPOSE 3000
