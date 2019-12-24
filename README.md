@@ -1,24 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+build image kaligo
 
-Things you may want to cover:
+```
+docker build -t kaligo:v2 .
+```
 
-* Ruby version
+first start compose
 
-* System dependencies
+```
+docker-compose build
+docker-compse run web rake db:create db:migrate db:seed
+```
 
-* Configuration
+start app
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+docker-compose up
+```
