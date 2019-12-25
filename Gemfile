@@ -3,10 +3,18 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
 
-gem 'hiredis', '~> 0.6.3'
+# Core
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
 gem 'rails', '~> 6.0.2'
+
+# OPTIMIZE: speed
+gem 'multi_json', '~> 1.14.1'
+gem 'oj', '~> 3.10.0'
+gem 'redis', '~> 4.1.3'
+
+# crawler
+gem 'rest-client', '~> 2.1.0'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
