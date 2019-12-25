@@ -1,6 +1,6 @@
-abcd = Hotel.create(name: "abcd", location: "Room")
-defg = Hotel.create(name: "defg", location: "Room")
-mnop = Hotel.create(name: "mnop", location: "Tokyo")
+abcd = Hotel.create(name: "abcd", location: "Rome")
+defg = Hotel.create(name: "defg", location: "Rome")
+mnop = Hotel.create(name: "mnop", location: "Singapore")
 
 supplier1 = Supplier.create(name: "supplier1", url: "https://api.myjson.com/bins/2tlb8")
 supplier2 = Supplier.create(name: "supplier2", url: "https://api.myjson.com/bins/42lok")
