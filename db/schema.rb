@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2019_12_24_164502) do
     t.bigint "supplier_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["hotel_id", "supplier_id"], name: "index_offers_on_hotel_id_and_supplier_id", unique: true
     t.index ["hotel_id"], name: "index_offers_on_hotel_id"
     t.index ["supplier_id"], name: "index_offers_on_supplier_id"
   end
@@ -38,6 +39,4 @@ ActiveRecord::Schema.define(version: 2019_12_24_164502) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "offers", "hotels"
-  add_foreign_key "offers", "suppliers"
 end

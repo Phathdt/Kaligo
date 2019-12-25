@@ -13,20 +13,20 @@ class HotelService
   end
 
   def perform
-    res = $redis.hget("hotels", cache_key)
+    res = $redis.hget('hotels', cache_key)
 
     res = JSON.parse(res) if res
 
     # check redis data is blank or expired
-    if res.nil? || (res["created_at"] + CACHING_TIME < Time.current.to_i)
+    if res.nil? || (res['created_at'] + CACHING_TIME < Time.current.to_i)
       hotels = fetch_data
 
       hash = { data: hotels, created_at: Time.current.to_i }
-      $redis.hset("hotels", cache_key, hash.to_json)
+      $redis.hset('hotels', cache_key, hash.to_json)
 
       hotels
     else
-      res["data"]
+      res['data']
     end
   end
 
