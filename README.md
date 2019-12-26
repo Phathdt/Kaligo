@@ -1,22 +1,22 @@
 # README
 
-build image kaligo
-
-```
-docker build -t kaligo:v2 .
-```
-
 first start compose
 
 ```
 docker-compose build
-docker-compse run web rake db:create db:migrate db:seed
+
 ```
 
 start app
 
 ```
 docker-compose up
+```
+
+create db, migrate and seed data 
+
+```
+docker-compose run web rake db:create db:migrate db:seed
 ```
 
 sample query
